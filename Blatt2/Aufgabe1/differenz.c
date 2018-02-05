@@ -1,0 +1,6 @@
+
+
+int differenz(void){
+
+
+}
