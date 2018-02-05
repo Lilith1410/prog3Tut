@@ -2,7 +2,7 @@
 
 int get_input(char* prompt){
  int number; 
- printf(prompt);
- scanf("d", &number);
+ printf("%s", prompt);
+ scanf("%d", &number);
  return number;   
 }
