@@ -1,0 +1,21 @@
+
+
+Aufgabe 3: 
+a) 
+	Für Java: Keine Ahnung. 
+   	Für C: das Array besteht aus aneinander gehängten Speicherplätzen. Diese haben alle dieselbe Größe.   Diese Größe muss von Anfang an feststehen. Wenn ein Array zb mit Chars und Longs bestückt wird, dann ist der Bedarf an Speicherplatz für die jeweiligen Elemente unterschiedlich. Dies wird nicht unterstützt. 
+
+b) 
+	Für Java: Ja, das ist möglich!  
+	Für C: Schwierig. Wenn C zu Beginn der Speicherplatzallokation weiß, wie groß das größte eindimensionale Array ist, dann kann er diesen Wert für die Speicherplatzallokation von allen anderen eindimensionalen Arrays benutzen. D.H. wenn ich weiß, dass mein größtes Eindimensionales Array eine Länge von 5 Elemten hat, dann kann das zweidimensionale Array mit einer Länge von 5 alle eindimensionalen Arrays initialisieren. Ist dann ein eindimensionales Array kürzer als 5, also hat zb nur 3 Elemente, dann kann der überflüssige speicherplatz frei bleiben. 
+-> aber das ist doch auch problematisch :o dann greife ich doch den wert an einer speicherzelle ab, wo noch gar kein wert hinterlegt ist. 
+
+-> antwort für c: nein. 
+
+Aufgabe 4: 
+Größe von int a[10][5], wenn int = 4 Bytes und Objektreferenz = 8 Bytes. 
+C: 10*5*4 = 200 Bytes
+Java: 264 Bytes aus Gründen. aber egal. 
+
+
+
