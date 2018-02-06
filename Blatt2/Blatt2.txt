@@ -1,0 +1,64 @@
+Aufgabe 1: in .c-Dateien Formen gelöst
+Aufgabe 2: 
+
+x9t-s4m-u1@pool339pc07:~/Schreibtisch/repos/prog3Tut/Blatt2/Aufgabe1$ nm math.o
+0000000000000000 T berechne
+                 U differenz
+                 U __isoc99_scanf
+00000000000000a3 T main
+                 U printf
+                 U puts
+                 U __stack_chk_fail
+                 U summe
+x9t-s4m-u1@pool339pc07:~/Schreibtisch/repos/prog3Tut/Blatt2/Aufgabe1$ nm summe.o                 
+		 U get_input
+0000000000000000 T summe
+x9t-s4m-u1@pool339pc07:~/Schreibtisch/repos/prog3Tut/Blatt2/Aufgabe1$ nm differenz.o
+0000000000000000 T differenz
+                 U get_input
+x9t-s4m-u1@pool339pc07:~/Schreibtisch/repos/prog3Tut/Blatt2/Aufgabe1$ nm input.o
+0000000000000000 T get_input
+                 U __isoc99_scanf
+                 U printf
+                 U __stack_chk_fail
+
+
+DIESE AUFGABE SOLL AUFGABE 3 VORBEREITEN! Heureka! 
+Also: 
+	math.o definiert Funktion "berechne" selbst. zusätzlich braucht sie funktionen von summe.h, differenz.h und stdio.h
+	summe.o definiert die Funktion "summe" selbst, benötigt dazu die summe.h datei (dort ist die Funktion deklariert) und greift auf Fremdfunktion "get_input" zu, die in input.h deklariert wird. 
+	differenz.o definiert Funktion "differenz" selbst, benötigt dazu differenz.h und für "get_input" funktion noch die input.h datei
+	input.o definiert die Funktion "get_input" und benötigt dazu die input.h datei. zusätzlich stdio.h datei für scanf und printf. 
+
+
+Aufgabe 3: 
+
+GCC_ARGS = -ansi -pedantic-errors -Wall -Wstrict-prototypes
+OBJ = math.o summe.o differenz.o input.o 
+
+math : $(OBJ) 
+	gcc $(GCC_ARGS) -o $@ $(OBJ) 
+%.o: %.c
+	gcc $(GCC_ARGS) -c $< 
+
+math.o: summe.h differenz.h stdio.h 
+
+summe.o: summe.h input.h 
+
+differenz.o: differenz.h input.h 
+
+input.o: input.h stdio.h 
+
+clean: 
+	rm math $(OBJ)
+
+
+Aufgabe 4: 
+
+f.o: f.c g.h und gcc -c f.c 
+g.o: g.c (stdio.h vollkommen überflüssig) und gcc -c g.c  
+m.o: m.c f.h g.h -> gcc -c m.c 
+m.c: -> muss komplett weg! 
+
+Aufgabe 6: Jonas würde davon abraten. 
+

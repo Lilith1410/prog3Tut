@@ -1,0 +1,6 @@
+Für Programmieren nochmal einzeln wiederholen: 
+
+Makefile schreiben -> muss sitzen aus dem EffEff! including pattern rules und allem :) 
+(p.s. meine lösung ist die musterlösung <3 ) 
+
+

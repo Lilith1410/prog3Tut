@@ -1,4 +1,5 @@
 #include "input.h"
+#include "summe.h"
 
 int summe(void){
  int a, b, result;
