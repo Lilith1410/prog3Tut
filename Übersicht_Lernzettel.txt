@@ -1,0 +1,17 @@
+Generelles: 
+Klausurrelevant: Vorlesungen 2 bis 11, also 10 Vorlesungen (50/50 C und C++)  
+Also 2 - 6 für c und 7 - 11 für c++. 
+-> Bis Freitag: Übungsblätter bis Anfang 6 fertig haben. Und: Zwischenklausur bereits erarbeiten, damit am Freitag aufgrund von Verspätung nachher noch die Ergebnisse verglichen werden können. 
+Im Zweifel: Prio auf Bearbeitung der Zwischenklausur, da Übungen auch übers Wochenende noch nachgeholt werden können. 
+
+
+Vorbereiten bis: eine Vorlesung vor c++. 
+
+Für Programmieren nochmal einzeln wiederholen: 
+
+Makefile schreiben -> muss sitzen aus dem EffEff! including pattern rules und allem :) 
+(p.s. meine lösung ist die musterlösung <3 ) 
+
+Speicherplatzbelegung mit Arrays, ggf. auch Vergleiche zu Java. Die Fragen dazu aus Übungsblatt 3. 
+
+

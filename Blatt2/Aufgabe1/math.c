@@ -9,9 +9,9 @@ void berechne(void){
  printf("<S>umme oder <D>ifferenz? ");  
  scanf("%c", &wahl);
  if(wahl == 'S' || wahl == 's' ) {
- result = summe(); 
+  result = summe(); 
  } else if (wahl == 'd' || wahl == 'D') {
- result = differenz(); 
+  result = differenz(); 
  } 
  printf("Ergebnis: %d\n", result); 
 }

@@ -1,4 +1,5 @@
 #include "input.h"
+#include "differenz.h"
 
 int differenz(void){
  int a, b, result; 
