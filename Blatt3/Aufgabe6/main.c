@@ -13,7 +13,7 @@ int main(void) {
 
  struct int20 c = create20("9700"); 
  struct int20 d = create20("422"); 
- struct int20 sumCD = add20(a,b); 
+ struct int20 sumCD = add20(c,d); 
 
  print20(c); printf("\n"); 
  print20(d); printf("\n"); 

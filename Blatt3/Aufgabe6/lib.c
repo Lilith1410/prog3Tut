@@ -1,64 +1,37 @@
-#include <stdio.h> 
+#include <stdio.h>
 #include "lib.h"
 #include <string.h>
 
 struct int20 create20(char val[]){
  struct int20 temp; 
- strcpy(temp.number, val); 
+ int sLen = strlen(val)-1; 
+ int i; 
+ temp.number[LEN] = '\0'; 
+ for ( i = LEN-1; i >= 0; --i) {
+  if( sLen < 0) {
+   temp.number[i] = '0'; 
+  } else {
+   temp.number[i] = val[sLen];
+  } 
+  --sLen;
+ } 
  return temp; 
 } 
 
-void print20(char* string){
- printf("%s", string); 
-}
-
-struct int20 add20(struct int20 value1, struct int20 value2){
-
+struct int20 add20(struct int20 value1, struct int20 value2) {
  int moduloRemainder = 0; 
- int counter,i; 
- 
- int array1[] = fillIntArray(value1.number); 
- int array2[] = fillIntArray(value2.number);  
-  
- for (  counter = 20; counter > -1; --counter) {
-  if ( moduloRemainder == 1) {
-    array1[counter] += 1; 
-    moduloRemainder = 0; 
-  }
-  array1[counter] += array2[counter]; 
-  if (array1[counter] > 9) {
+ int counter, nmb; 
+ struct int20 tmp; 
+ for ( counter = LEN -1 ; counter >= 0; --counter) {
+  nmb = getInt(value1.number[counter]) + getInt(value2.number[counter]) + moduloRemainder;  
+  moduloRemainder = 0; 
+  if (nmb > 9) {
     moduloRemainder = 1; 
-    array1[counter] = array1[counter] % 10; 
   } 
+  tmp.number[counter] = getChar(nmb % 10); 
  }
-
- char s1[]; 
-
- for ( i = 0; i < 20; ++i ) {
-  s1[i] = getChar(array1[i]); 
- }
-
- return create20(s1); 
-
+ return tmp; 
 } 
-
-
-/* takes string, creates array w 20 cells, fills array backwards w letters of string. if string is cleared before array is filled, rest cells get filled w 0's. */ 
-int ar[] fillIntArray( char* string) {
- int i = 20; 
- int tmpArr[20]; 
- int sLen = strlen(string); 
- for (i; i > 0; --i) {
-   if ( sLen == 0) {
-   tmpArr[i] = 0; 
-   }
-  tmpArr[i] = getInt(string[sLen]); 
-  --sLen; 
- }
- return tmpArr; 
-}
-
-
 
 /* takes int, returns matching char-value */ 
 char getChar(int c) {
@@ -70,6 +43,17 @@ char getChar(int c) {
 int getInt(char c) {
  int cAsInt = c - '0'; 
  return cAsInt; 
+}
+
+void print20(struct int20 param){
+ char c = '0'; 
+ int i = 0; 
+ while (param.number[i] == c) {
+  ++i; 
+ }
+ for (i; i < LEN; ++i ){
+  printf("%c", param.number[i]); 
+ }
 }
 
 
