@@ -1,0 +1,19 @@
+Antworten zur den Fragestellungen: 
+
+Aufgabe 1: 
+a) Erklären Sie das Verhalten des Programms und die Ausgabe der Stack Daten. 
+
+Der ausgegebene stack zeigt das folgende: 
+Einen Index von 0 bis 64, also den Speicherbereich der beiden arrays passwort und eingabe. 
+dann die speicheradresse der verwendenten zelle (konsekutiv aufsteigend)
+dann die int nummer des eingegebenen zeichens
+dann das zeichen selbst
+
+Wie soll das verhalten noch erklärt werden? das steht doch schon auf dem zettel. 
+die for schleife fügt ja nur den auszug aus dem speicher ein, damit man grafisch nachvollziehen kann, was in dem moment der eingabe im speicher steht. 
+
+b) Korrigieren Sie das Programm, so dass das beschriebene Problem nicht mehr auftreten kann. Wie können Sie den scanf-Aufruf sicherer machen? 
+
+(s. Programmcode). 
+Für scanf muss spezifiziert werden, welche Eingabe erlaubt ist.
+Alternativ kann man auch einfach den Array-Bereich von "password" nicht auf 32 festlegen, sondern die Array-Größe der Größe der Initialisierung anpassen. Für jemanden, der den Code nicht sieht, kann das schon die sicherheit erhöhen. 

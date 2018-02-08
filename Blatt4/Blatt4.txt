@@ -11,3 +11,5 @@ damit wird die for-schleife übersprungen.
 Wenn man davon ausgeht, dass das char array s2 nicht mit einem '\0' zeichen beginnt, wird die if bedingung nicht erfüllt. 
 somit wird NULL zurückgegeben. 
 :) 
+
+Aufgabe 6 muss nicht erledigt werden :) 
