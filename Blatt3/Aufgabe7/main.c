@@ -5,6 +5,6 @@ int main(void) {
  printf("Eingabe: "); 
  scanf("%d", &i); 
  ip = &i; 
- printf("Eingabe war: %d\n", *(int *)ip ); 
+ printf("Eingabe war: %d\n", *ip ); 
  return 0; 
 }

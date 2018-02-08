@@ -1,0 +1,13 @@
+Antworten zu den Fragen auf Blatt 4: 
+
+Aufgabe 3: 
+Rückgabewerte entweder start oder NULL; 
+Der Rückgabewert ist null. 
+die zweite schleife wird nur durchlaufen, wenn *left == *right. 
+da left auf start zeigt und start auf s1 zeigt. 
+und da right auf s2 zeigt. 
+sind s1 und s2 ungleich (sie zeigen auf unterschiedliche speicherzellen!) 
+damit wird die for-schleife übersprungen. 
+Wenn man davon ausgeht, dass das char array s2 nicht mit einem '\0' zeichen beginnt, wird die if bedingung nicht erfüllt. 
+somit wird NULL zurückgegeben. 
+:) 
