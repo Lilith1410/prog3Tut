@@ -1,0 +1,11 @@
+Dies ist eine Zeile
+hier 
+ist noch eine 
+Zeile und jetzt ; 
+kommen Sonderzeichen! und was?
+
+sonst nix
+
+zum testen
+und weiter geht's. Das
+wars jetzt. 
