@@ -5,42 +5,50 @@
 
 int main(void){
 
-  int i, j = 0, knotCount; 
+  int i, j, k; 
   int read, numLines = 0; 
+  char* tmp; 
 
-  knot* knots; // Array of knots
-  knot* parentKnots; // Array of ParentKnots
+  char knotenNamen[ARRAY_LENGTH][KNOT_NAME_LENGTH]; // Array of knots
+  char vorgaengerKnoten[ARRAY_LENGTH][KNOT_NAME_LENGTH]; // Array of ParentKnots
+  knot ergebnisArray[ARRAY_LENGTH]; 
 
-  char* Knoten; 
-  char* vorgängerKnoten; 
+  // lies zeilenweise ein
+  do {
+    read = scanf("%s %s", knotenNamen[numLines], vorgaengerKnoten[numLines]); // hier wird eingelesen + 2 arrays gefüllt
+    numLines++; 
+  } while ( read > 0);
 
-  knots = (knot*)malloc(ARRAY_LENGTH);
-  parentKnots  = (knot*)malloc(ARRAY_LENGTH); 
+  numLines--;  
 
- 
-  vorgängerKnoten = (char*)malloc(ARRAY_LENGTH); 
-  Knoten = (char*)malloc(ARRAY_LENGTH); 
-
-  // fülle das eindimensionale Array knots mit pointern auf max.20 char lange char-arrays
-  for ( i = 0; i < ARRAY_LENGTH; i++) {
-    knots[i] = // Zeiger auf Char-Array mit bis zu 20 Stellen
+  // Fülle Ergebnis-Array mit Knoten! 
+  for( i = 0; i <= numLines; ++i) {
+    strcpy(ergebnisArray[i].knotName, knotenNamen[i]); 
   }
 
-  // lies zeilenweise aus
-  do {
-    read = scanf("%s %s", Knoten[j], vorgängerKnoten[j]); 
-    numLines++; 
-    j++; 
-  } while ( read > 0){
-    numLines--; 
-  }; 
-  
-  
-  // printe resulte aus, achte auf geänderte Anzeige des Mutterknotens!  
-  for(i = 0; i < arrayLength; ++i) {
-    printf("%d. Stelle: %c", i, knotName[i]); 
+  // Biege im Ergebnisarray die Parent-Pointer auf die Stellen im Ergebnisarray, wo sich die Parentknoten befinden
+  for(i = 0; i < ARRAY_LENGTH; i++){
+    for(k = 0; k < ARRAY_LENGTH; k++) {
+      // wenn Wurzelknoten gefunden wurde: Da wo Vorgängerknoten = "<none>" stehen hat, Nullpointer setzen
+      if (strcmp(vorgaengerKnoten[i], "<none>") == 0){ 
+        ergebnisArray[i].parentKnot = NULL; 
+      }
+      // sonst wenn: name vorgängerknoten im ergebnisarray gefunden wurde
+      else if(strcmp(vorgaengerKnoten[i], ergebnisArray[k].knotName) == 0) {
+        // setze pointer aus ergebnisarray-parentknot auf adresse 
+        ergebnisArray[i]->parentKnot = &ergebnisArray[j]; 
+      } 
+    }
+
+  }
+
+  // Gibt das ErgebnisArray aus gemäß Formatierungswunsch
+  printf("Anzahl Knoten: %d\n", numLines);
+  for ( j = 0; j < numLines; ++j) {
+    if (ergebnisArray[j]->parentKnot == NULL) {
+      printf("*%s -> -\n", ergebnisArray[j]->knotName); 
+    } else {
+      printf(" %s -> %s\n", ergebnisArray[j]->knotName, ergebnisArray[j]->parentKnot);
+    } 
   }
 }
-
-
-
