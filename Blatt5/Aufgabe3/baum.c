@@ -36,7 +36,7 @@ int main(void){
       // sonst wenn: name vorgängerknoten im ergebnisarray gefunden wurde
       else if(strcmp(vorgaengerKnoten[i], ergebnisArray[k].knotName) == 0) {
         // setze pointer aus ergebnisarray-parentknot auf adresse 
-        ergebnisArray[i]->parentKnot = &ergebnisArray[j]; 
+        ergebnisArray[i].parentKnot = &ergebnisArray[j]; 
       } 
     }
 
@@ -45,10 +45,10 @@ int main(void){
   // Gibt das ErgebnisArray aus gemäß Formatierungswunsch
   printf("Anzahl Knoten: %d\n", numLines);
   for ( j = 0; j < numLines; ++j) {
-    if (ergebnisArray[j]->parentKnot == NULL) {
-      printf("*%s -> -\n", ergebnisArray[j]->knotName); 
+    if (ergebnisArray[j].parentKnot == NULL) {
+      printf("*%s -> -\n", ergebnisArray[j].knotName); 
     } else {
-      printf(" %s -> %s\n", ergebnisArray[j]->knotName, ergebnisArray[j]->parentKnot);
+      printf(" %s -> %s\n", ergebnisArray[j].knotName, ergebnisArray[j].parentKnot);
     } 
   }
 }
