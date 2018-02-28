@@ -5,7 +5,7 @@ int main(void){
   char text[] = "HALLO WELT!"; /* lokal im main-Stackframe */ 
   printf("main(): text = %s\n", text); 
   printf("main(): Addressbereich = %p-%p\n", (void*)text, (void*)&text[strlen(text)]); 
-  //sub(); 
+  sub(); 
   printf("main(): text = %s\n", text); 
   printf("main(): Addressbereich = %p-%p\n", (void*)text, (void*)&text[strlen(text)]);
   printf("Ende main\n"); 
